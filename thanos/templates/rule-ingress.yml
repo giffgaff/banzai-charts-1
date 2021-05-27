@@ -12,7 +12,7 @@ metadata:
     app.kubernetes.io/version: {{ .Chart.AppVersion | replace "+" "_" }}
     app.kubernetes.io/component: rule
     {{- if .Values.rule.http.ingress.labels }}
-  {{ toYaml .Values.rule.http.ingress.labels | indent 4 }}
+{{ toYaml .Values.rule.http.ingress.labels | indent 4 }}
     {{- end }}
     {{- with .Values.rule.http.ingress.annotations }}
   annotations: {{ toYaml . | nindent 4 }}
